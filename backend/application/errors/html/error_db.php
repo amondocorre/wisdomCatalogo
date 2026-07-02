@@ -1,5 +1,8 @@
 <?php
-echo "DATABASE ERROR OCCURRED<br>\n";
-echo "Heading: $heading<br>\n";
-echo "Message: $message<br>\n";
+header('Content-Type: application/json');
+echo json_encode([
+    'status' => 'error',
+    'message' => "DB Error [$heading]: $message"
+]);
+exit;
 ?>

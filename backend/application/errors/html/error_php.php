@@ -1,7 +1,8 @@
 <?php
-echo "PHP ERROR OCCURRED<br>\n";
-echo "Severity: $severity<br>\n";
-echo "Message:  $message<br>\n";
-echo "Filename: $filepath<br>\n";
-echo "Line Number: $line<br>\n";
+header('Content-Type: application/json');
+echo json_encode([
+    'status' => 'error',
+    'message' => "PHP Error [$severity]: $message in $filepath on line $line"
+]);
+exit;
 ?>

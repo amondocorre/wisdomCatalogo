@@ -8,7 +8,7 @@ $is_localhost = (isset($_SERVER['HTTP_HOST']) && (strpos($_SERVER['HTTP_HOST'], 
 
 $db['default'] = array(
     'dsn'   => '',
-    'hostname' => $is_localhost ? 'localhost' : '50.28.39.26',
+    'hostname' => 'localhost', // Siempre es localhost en cPanel o hosting compartido
     'username' => $is_localhost ? 'root' : 'wisdomco_admin',
     'password' => $is_localhost ? '' : '.hackers.2026',
     'database' => $is_localhost ? 'catalogo_db' : 'wisdomco_catalogo',

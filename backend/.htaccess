@@ -6,6 +6,9 @@
 
 <IfModule mod_rewrite.c>
     RewriteEngine On
+    # Permitir que el header Authorization pase a PHP en FastCGI
+    SetEnvIf Authorization "(.*)" HTTP_AUTHORIZATION=$1
+    
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteRule ^(.*)$ index.php?/$1 [L]
